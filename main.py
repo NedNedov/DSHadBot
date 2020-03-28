@@ -32,7 +32,9 @@ async def on_member_join(member):
 # 		await member.remove_roles()
 
 # RUN
+
+Привет, WRIV!
+
 client.run(config.TOKEN)
 
-# Njg5MTI1MjEyMDcxMjY0MzE3.Xm-USw.Bzf721CoLsxxSc4q8vj1CIxkyKk - токен
 # в config.py нужен по сути только TOKEN,но на всякий случай,пусть все остается,как есть
