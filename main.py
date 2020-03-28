@@ -33,5 +33,5 @@ async def on_member_join(member):
 # RUN
 token = os.environ.get('BOT_TOKEN')
 
-bot.run(str(token))
+client.run(str(token))
 # в config.py нужен по сути только TOKEN,но на всякий случай,пусть все остается,как есть
