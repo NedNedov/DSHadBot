@@ -7,10 +7,6 @@ import os
 
 client = commands.Bot(command_prefix = '.')
 
-# @client.event
-# async def on_ready():
-# 	print('Im ready') не обязательно
-
 # команда для очистки чата
 @client.command()
 async def clear(ctx, num = 5):
@@ -19,17 +15,11 @@ async def clear(ctx, num = 5):
 # авто-роль
 @client.event
 async def on_member_join(member):
-	role = 689396798879563843
+	channel = discord.utils.get(member.guild.chaennels, name = "📃𝓒𝓗𝓐𝓣📃")
+	await channel.send(f"Welcome {member.mention}")
+
+	role = discord.utild.get(member.guild.roles, name = "Новобранец")
 	await member.add_roles(role)
-
-# # no more 1 role
-# @client.event
-# async def on_member_update(before, after):
-
-# 	if (len(after.roles)) > 1:
-# 		member = discord.utils.get(after.guild.members)
-# 		await member.remove_roles()
-
 # RUN
 token = os.environ.get('BOT_TOKEN')
 
