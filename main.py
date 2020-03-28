@@ -15,9 +15,6 @@ async def clear(ctx, num = 5):
 # авто-роль
 @client.event
 async def on_member_join(member):
-	channel = discord.utils.get(member.guild.chaennels, name = "📃𝓒𝓗𝓐𝓣📃")
-	await channel.send(f"Welcome {member.mention}")
-
 	role = discord.utild.get(member.guild.roles, name = "Новобранец")
 	await member.add_roles(role)
 # RUN
