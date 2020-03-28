@@ -32,9 +32,6 @@ async def on_member_join(member):
 # 		await member.remove_roles()
 
 # RUN
-
-Привет, WRIV!
-
 token = os.environ.get('BOT_TOKEN')
 
 bot.run(str(token))
