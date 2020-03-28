@@ -17,6 +17,13 @@ async def clear(ctx, num = 5):
 async def on_member_join(member):
 	role = discord.utils.get(member.guild.roles, id=int("689396798879563843"))
 	await member.add_roles(role)
+
+# прощание
+@client.event
+async def on_member_remove(member):
+	channel = discord.utils.get(member.guild.channels, id=int("582894293551677451"))
+	await channel.send(f"{member} left us.Goodbye")
+	
 # RUN
 token = os.environ.get('BOT_TOKEN')
 
