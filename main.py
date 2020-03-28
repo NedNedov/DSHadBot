@@ -15,7 +15,7 @@ async def clear(ctx, num = 5):
 # авто-роль
 @client.event
 async def on_member_join(member):
-	role = discord.utild.get(member.guild.roles, name = "Новобранец")
+	role = discord.utils.get(member.guild.roles, id=int("689396798879563843"))
 	await member.add_roles(role)
 # RUN
 token = os.environ.get('BOT_TOKEN')
