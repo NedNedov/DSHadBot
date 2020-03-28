@@ -35,6 +35,6 @@ async def on_member_join(member):
 
 Привет, WRIV!
 
-client.run(config.TOKEN)
+token = os.environ.get('BOT_TOKEN')
 
 # в config.py нужен по сути только TOKEN,но на всякий случай,пусть все остается,как есть
