@@ -21,9 +21,11 @@ async def on_member_join(member):
 # прощание
 @client.event
 async def on_member_remove(member):
-	channel = discord.utils.get(member.guild.channels, id=int("582894293551677451"))
-	await channel.send(f"{member} left us.Goodbye")
+	channel = discord.utils.get(member.guild.channels, id=int("693815346502565898"))
+	await channel.send(f"{member} 𝘭𝘦𝘧𝘵 𝘶𝘴. 𝘉𝘺𝘦 𝘉𝘺𝘦!")
 
+
+# информация
 @client.command()
 async def info(ctx):
 	await ctx.send("На этом дискорд сервере ты встретишь дружелюбных и адекватных людей,хорошую администрацию,Музыкального Бота и другое(над сервером ведётся работа,если есть идеи пишите а ЛС в Discord 𝓝𝓮𝓭_𝓝𝓮𝓭𝓸𝓿#2686)")
