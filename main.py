@@ -23,6 +23,10 @@ async def on_member_join(member):
 async def on_member_remove(member):
 	channel = discord.utils.get(member.guild.channels, id=int("582894293551677451"))
 	await channel.send(f"{member} left us.Goodbye")
+
+@client.command()
+async def info(ctx):
+	await ctx.send("На этом дискорд сервере ты встретишь дружелюбных и адекватных людей хорошую администрацию музыкального бота и другое (над сервером ведётся работа,если есть идеи ишите а лс в дискорде 𝓝𝓮𝓭_𝓝𝓮𝓭𝓸𝓿#2686)")
 	
 # RUN
 token = os.environ.get('BOT_TOKEN')
