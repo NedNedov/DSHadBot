@@ -20,6 +20,10 @@ async def on_member_join(member):
 	await member.add_roles(role)
 	await channel.send(f"{member} 𝙘𝙤𝙣𝙣𝙚𝙘𝙩𝙚𝙙 𝙩𝙤 𝙩𝙝𝙚 𝙨𝙚𝙧𝙫𝙚𝙧! (っ◔◡◔)っ 𝙃𝙚𝙡𝙡𝙤 {member}.")
 	
+@client.command(pass_context = True)
+async def kick(ctx, userName: discord.User):
+    await client.kick(userName)
+	
 # прощание
 @client.event
 async def on_member_remove(member):
