@@ -10,10 +10,6 @@ client = commands.Bot(command_prefix = '.')
 @client.command()
 async def clear(ctx, num = 5):
 	await ctx.channel.purge(limit = num)
-
-@client.command(pass_context = True)
-async def kick(ctx, member : discord.Member, *, name):
-    await member.kick(name)
 	
 # авто-роль
 @client.event
