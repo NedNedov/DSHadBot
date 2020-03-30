@@ -19,7 +19,7 @@ async def on_member_join(member):
 	await member.add_roles(role)
 
 @client.command()
-async def info(ctx):
+async def membls(ctx):
 	members = message.guild.members
 	for member in members:
 		await ctx.send(member)
