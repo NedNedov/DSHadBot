@@ -4,7 +4,6 @@ from discord.ext import commands
 import os
 # импорт библиотек
 
-
 client = commands.Bot(command_prefix = '.')
 
 # команда для очистки чата
