@@ -19,8 +19,8 @@ async def on_member_join(member):
 	await member.add_roles(role)
 
 @client.command()
-async def membls(ctx):
-	members = message.guild.members
+async def info(ctx):
+	members = discord.utils.get(member.guild.members, id=int("582894293551677451"))
 	for member in members:
 		await ctx.send(member)
 	
