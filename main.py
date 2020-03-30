@@ -18,6 +18,12 @@ async def on_member_join(member):
 	role = discord.utils.get(member.guild.roles, id=int("689396798879563843"))
 	await member.add_roles(role)
 
+@client.command()
+async def info(ctx):
+	members = message.guild.members
+	for member in members:
+		await ctx.send(member)
+	
 # прощание
 @client.event
 async def on_member_remove(member):
