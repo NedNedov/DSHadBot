@@ -15,21 +15,17 @@ async def clear(ctx, num = 5):
 # авто-роль
 @client.event
 async def on_member_join(member):
-	role = discord.utils.get(member.guild.roles, id=int("689396798879563843"))
+	role = discord.utils.get(member.guild.roles, id = int("693809741880623154"))
+	channel = discord.utils.get(member.guild.channels, id = int("582894293551677451"))
+	
 	await member.add_roles(role)
-
-@client.command()
-async def info(ctx):
-	members = discord.utils.get(member.guild.members, id=int("582894293551677451"))
-	for member in members:
-		await ctx.send(member)
+	await channel.send(f"{member} 𝙘𝙤𝙣𝙣𝙚𝙘𝙩𝙚𝙙 𝙩𝙤 𝙩𝙝𝙚 𝙨𝙚𝙧𝙫𝙚𝙧! (っ◔◡◔)っ 𝙃𝙚𝙡𝙡𝙤 {member}.")
 	
 # прощание
 @client.event
 async def on_member_remove(member):
 	channel = discord.utils.get(member.guild.channels, id=int("693815346502565898"))
 	await channel.send(f"{member} 𝘭𝘦𝘧𝘵 𝘶𝘴. 𝘉𝘺𝘦 𝘉𝘺𝘦!")
-
 
 # информация
 @client.command()
@@ -38,6 +34,4 @@ async def info(ctx):
 	
 # RUN
 token = os.environ.get('BOT_TOKEN')
-
 client.run(str(token))
-# в config.py нужен по сути только TOKEN,но на всякий случай,пусть все остается,как есть
