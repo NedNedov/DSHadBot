@@ -25,7 +25,7 @@ async def kick(ctx, userName: discord.User):
 @client.event
 async def on_member_remove(member):
 	channel = discord.utils.get(member.guild.channels, id=int("693815346502565898"))
-	await channel.send(f"{member} 𝘭𝘦𝘧𝘵 𝘶𝘴. 𝘉𝘺𝘦 𝘉𝘺𝘦!")
+	await channel.send(f"{member} 𝙡𝙚𝙛𝙩 𝙪𝙨! 𝘽𝙮𝙚 𝘽𝙮𝙚...")
 
 # информация
 @client.command()
