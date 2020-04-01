@@ -14,11 +14,8 @@ async def clear(ctx, num = 5):
 # авто-роль
 @client.event
 async def on_member_join(member):
-	role = discord.utils.get(member.guild.roles, id = int("693809741880623154"))
-	channel = discord.utils.get(member.guild.channels, id = int("582894293551677451"))
-	
+	role = discord.utils.get(member.guild.roles, id = int("689396798879563843"))
 	await member.add_roles(role)
-	await channel.send(f"{member} 𝙘𝙤𝙣𝙣𝙚𝙘𝙩𝙚𝙙 𝙩𝙤 𝙩𝙝𝙚 𝙨𝙚𝙧𝙫𝙚𝙧! (っ◔◡◔)っ 𝙃𝙚𝙡𝙡𝙤 {member}.")
 	
 @client.command(pass_context = True)
 async def kick(ctx, userName: discord.User):
