@@ -36,7 +36,7 @@ async def coin(ctx, args):
 async def on_message(message):
 	channel = discord.utils.get(member.guild.channels)
 	if message.content == 'test':
-		channel.send(f"{member} it's bad word!Don't use it")
+		channel.send("It's bad word!Don't use it")
 
 # представление
 @client.command()
