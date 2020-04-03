@@ -2,6 +2,7 @@ import discord
 from discord import utils
 from discord.ext import commands
 import os
+import random
 # импорт библиотек
 
 client = commands.Bot(command_prefix = '.')
