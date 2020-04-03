@@ -20,9 +20,9 @@ async def on_member_join(member):
 	
 # прощание
 @client.event
-async def on_member_remove(member, ctx):
-	channel = discord.utils.get(member.guild.channels, id=int("693815346502565898"))
-	await ctx.send(f"{member} 𝙡𝙚𝙛𝙩 𝙪𝙨! 𝘽𝙮𝙚 𝘽𝙮𝙚...")
+async def on_member_remove(member):
+	channel = discord.utils.get(member.guild.channels, id=int("582894293551677451"))
+	await channel.send(f"{member} 𝙡𝙚𝙛𝙩 𝙪𝙨! 𝘽𝙮𝙚 𝘽𝙮𝙚...")
 
 @client.command()
 async def coin(ctx, args):
