@@ -33,8 +33,8 @@ async def on_member_remove(member):
 
 @client.command()
 async def coin(ctx, args):
-    variants = ['орел', 'решка']
-    if args == 'орел':
+    variants = ['Орёл', 'Решка']
+    if args == 'орел' or 'орёл':
         await ctx.send('Правильный ответ: ' + random.choice(variants))
     elif args == 'решка':
         await ctx.send('Правильный ответ: ' + random.choice(variants))
@@ -71,6 +71,14 @@ async def helping(ctx, args):
 @client.command()
 async def info(ctx):
     await ctx.send("На этом дискорд сервере ты встретишь дружелюбных и адекватных людей,хорошую администрацию,Музыкального Бота и другое(над сервером ведётся работа,если есть идеи пишите а ЛС в Discord 𝓝𝓮𝓭_𝓝𝓮𝓭𝓸𝓿#2686)")
+
+# да/нет игра
+
+@client.command()
+async def askg(ctx, args):
+	answers = ['Да','Возможно','Нет']
+	await ctx.send("Твой вопрос: " + args + "\nОтвет: " + random.choice(answers))
+
 
 # RUN
 token = os.environ.get('BOT_TOKEN')
