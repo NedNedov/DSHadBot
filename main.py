@@ -34,7 +34,7 @@ async def coin(ctx, args):
 
 @client.command()
 async def helping(ctx, args):
-	if args == None:
+	if args == 'server':
 		await ctx.send("Для информации насчет ботов перейдите в #Information.Для получения информации о каком-то канале,после комнады напиши назвние канала.")
 	elif args == 'chat':
 		await ctx.send("Этот канал для общения и разговоров")
