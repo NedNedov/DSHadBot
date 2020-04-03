@@ -3,8 +3,21 @@ import discord
 from discord import utils
 from discord.ext import commands
 import random
+import requests
+import bs4
+import COVID19Py
 # импорт библиотек
 
+# коронавирус
+ncov19 = COVID19Py.COVID19()
+
+latest = ncov19.getLatest()
+location = ncov19.getLocationByCountryCode("AZ")
+
+final_confirmed = f"Заболевших: {location[0]['latest']['confirmed']}"
+final_deaths = f"Смертей: {location[0]['latest']['deaths']}"
+
+# client
 
 client = commands.Bot(command_prefix='.')
 
@@ -13,6 +26,13 @@ client = commands.Bot(command_prefix='.')
 @client.command()
 async def clear(ctx, num=5):
     await ctx.channel.purge(limit=num)
+
+# coronainfo
+
+client.command()
+async def corona(ctx):
+    await ctx.send(final_confirmed + "\n" + final_deaths)
+
 
 # авто-роль
 
