@@ -32,6 +32,11 @@ async def coin(ctx, args):
 	elif args == 'решка':
 		await ctx.send('Правильный ответ: ' + random.choice(variants))
 
+# представление
+@client.command()
+async def who(ctx):
+	await ctx.send("Я Rudolf Hadler, помощник и бот на этом сервере.Всем хорошего дня и побед в играх!")
+		
 @client.command()
 async def helping(ctx, args):
 
