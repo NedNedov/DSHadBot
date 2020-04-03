@@ -27,6 +27,15 @@ async def on_member_remove(member):
 	channel = discord.utils.get(member.guild.channels, id=int("693815346502565898"))
 	await channel.send(f"{member} 𝙡𝙚𝙛𝙩 𝙪𝙨! 𝘽𝙮𝙚 𝘽𝙮𝙚...")
 
+@client.command()
+variants = ['орел','решка']
+
+async def coin(ctx, args):
+	if args == 'орел':
+		await ctx.send('Правильный ответ: ' + random.choice(variants))
+	elif args == 'решка':
+		await ctx.send('Правильный ответ: ' + random.choice(variants))
+	
 # информация
 @client.command()
 async def info(ctx):
