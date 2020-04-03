@@ -32,6 +32,10 @@ async def coin(ctx, args):
 	elif args == 'решка':
 		await ctx.send('Правильный ответ: ' + random.choice(variants))
 
+@client.event
+async def on_message(message):
+	if message.content == 'test':
+		clear(2)		
 # представление
 @client.command()
 async def who(ctx):
@@ -54,7 +58,7 @@ async def helping(ctx, args):
 		await ctx.send("Это канал для получения информации о сервере")
 	elif args == 'musicselect':
 		await ctx.send("Канал для выбора песни для MusicRoom1")	
-	
+
 # информация
 @client.command()
 async def info(ctx):
