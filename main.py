@@ -33,7 +33,7 @@ async def coin(ctx, args):
 		await ctx.send('Правильный ответ: ' + random.choice(variants))
 
 @client.command()
-async def help(ctx, args):
+async def helping(ctx, args):
 	if args == '':
 		await ctx.send("Для информации насчет ботов перейдите в #Information.Для получения информации о каком-то канале,после комнады напиши назвние канала.")
 	elif args == '#📃𝓒𝓗𝓐𝓣📃':
