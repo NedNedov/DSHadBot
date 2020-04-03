@@ -31,7 +31,10 @@ async def coin(ctx, args):
 		await ctx.send('Правильный ответ: ' + random.choice(variants))
 	elif args == 'решка':
 		await ctx.send('Правильный ответ: ' + random.choice(variants))
-	
+
+@client.command()
+async def youtube(ctx, args):
+	webbrowser.open("https://www.youtube.com/results?search_query=" + args)
 
 # представление
 @client.command()
