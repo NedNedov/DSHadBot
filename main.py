@@ -28,9 +28,8 @@ async def on_member_remove(member):
 	await channel.send(f"{member} 𝙡𝙚𝙛𝙩 𝙪𝙨! 𝘽𝙮𝙚 𝘽𝙮𝙚...")
 
 @client.command()
-variants = ['орел','решка']
-
 async def coin(ctx, args):
+	variants = ['орел','решка']
 	if args == 'орел':
 		await ctx.send('Правильный ответ: ' + random.choice(variants))
 	elif args == 'решка':
