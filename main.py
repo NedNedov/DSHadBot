@@ -34,8 +34,10 @@ async def coin(ctx, args):
 
 @client.event
 async def on_message(message):
+	channel = discord.utils.get(member.guild.channels
 	if message.content == 'test':
-		clear(2)		
+		channel.send(f"{member} it's bad word!Don't use it")
+
 # представление
 @client.command()
 async def who(ctx):
