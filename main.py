@@ -76,7 +76,7 @@ async def info(ctx):
 
 @client.command()
 async def askg(ctx, *,args):
-	answers = ['Да','Возможно','Нет']
+	answers = ['Да','Возможно','Нет','Вероятнее всего','Может быть','Определённо нет','Определённо да']
 	await ctx.send("Твой вопрос: " + args + "\nОтвет: " + random.choice(answers))
 
 
