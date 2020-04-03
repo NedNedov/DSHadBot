@@ -36,15 +36,15 @@ async def coin(ctx, args):
 async def helping(ctx, args):
 	if args == '':
 		await ctx.send("Для информации насчет ботов перейдите в #Information.Для получения информации о каком-то канале,после комнады напиши назвние канала.")
-	elif args == '📃𝓒𝓗𝓐𝓣📃':
+	elif args == 'CHAT':
 		await ctx.send("Этот канал для общения и разговоров")
-	elif args == '📣𝕹𝖊𝖜𝖘📢':
+	elif args == 'News':
 		await ctx.send("Тут переодически появляются новости сервера")
-	elif args == '💻👨🏽🅲🅷🅴🅰🆃🆂👨🏽💻':
+	elif args == 'Cheats':
 		await ctx.send("Тут обмен читов для CS:GO")
-	elif args == '🗣ᴅɪsᴄᴜssɪᴏɴ-ᴄʜᴇᴀᴛs🗣':
+	elif args == 'Disscusion-cheats':
 		await ctx.send("Тут обсуждение читов для CS:GO")
-	elif args == '𝕀𝕟𝕗𝕠𝕣𝕞𝕒𝕥𝕚𝕠𝕟💭':
+	elif args == 'Information':
 		await ctx.send("Это канал для получения информации о сервере")
 	elif args == 'musicselect':
 		await ctx.send("Канал для выбора песни для MusicRoom1")	
