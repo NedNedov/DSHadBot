@@ -4,3 +4,4 @@ websockets
 chardet
 bs4
 requests
+COVID19Py
