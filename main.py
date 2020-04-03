@@ -17,10 +17,6 @@ async def on_member_join(member):
 	role = discord.utils.get(member.guild.roles, id = int("689396798879563843"))
 	await member.add_roles(role)
 	
-@client.command(pass_context = True)
-async def kick(ctx, userName: discord.User):
-    await client.kick(userName)
-	
 # прощание
 @client.event
 async def on_member_remove(member):
@@ -31,9 +27,9 @@ async def on_member_remove(member):
 async def coin(ctx, args):
 	variants = ['орел','решка']
 	if args == 'орел':
-		await ctx.send('Правильный ответ: ' + random.choice(variants))
+		await ctx.send('Правильный ответ: ' + (random.choice(variants)))
 	elif args == 'решка':
-		await ctx.send('Правильный ответ: ' + random.choice(variants))
+		await ctx.send('Правильный ответ: ' + (random.choice(variants)))
 	
 # информация
 @client.command()
