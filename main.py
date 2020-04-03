@@ -3,6 +3,7 @@ from discord import utils
 from discord.ext import commands
 import os
 import random
+import webbrowser
 # импорт библиотек
 
 client = commands.Bot(command_prefix = '.')
