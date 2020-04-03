@@ -28,9 +28,9 @@ async def on_member_remove(member):
 async def coin(ctx, args):
 	variants = ['орел','решка']
 	if args == 'орел':
-		await ctx.send('Правильный ответ: ' + (random.choice(variants)))
+		await ctx.send('Правильный ответ: ' + random.choice(variants))
 	elif args == 'решка':
-		await ctx.send('Правильный ответ: ' + (random.choice(variants)))
+		await ctx.send('Правильный ответ: ' + random.choice(variants))
 	
 # информация
 @client.command()
