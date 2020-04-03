@@ -34,10 +34,9 @@ async def coin(ctx, args):
 
 @client.command()
 async def helping(ctx, args):
-	channel = discord.utils.get(member.guild.channels, id=int("695029960317993011"))
-	
+
 	if args == 'server':
-		await ctx.send("Для информации насчет ботов перейдите в" + channel + ". Для получения информации о каком-то канале,после комнады напиши назвние канала.")
+		await ctx.send("Для информации насчет ботов перейдите в Information. Для получения информации о каком-то канале,после комнады напиши назвние канала.")
 	elif args == 'chat':
 		await ctx.send("Этот канал для общения и разговоров")
 	elif args == 'news':
