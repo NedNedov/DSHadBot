@@ -29,7 +29,7 @@ async def clear(ctx, num=5):
 
 # coronainfo
 
-client.command()
+@client.command()
 async def corona(ctx):
     await ctx.send(final_confirmed + "\n" + final_deaths)
 
