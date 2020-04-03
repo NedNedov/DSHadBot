@@ -35,7 +35,7 @@ async def coin(ctx, args):
 
 @client.command()
 async def youtube(ctx, args):
-	webbrowser.open("https://www.youtube.com/results?search_query=" + args)
+	webbrowser.open_new_tab("https://www.youtube.com/results?search_query=" + args)
 
 # представление
 @client.command()
