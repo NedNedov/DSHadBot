@@ -23,15 +23,12 @@ async def clear(ctx, num=5):
 @client.command()
 async def corona(ctx, *, args):	
 	ncov19 = COVID19Py.COVID19()
-	
 	latest = ncov19.getLatest()
-	location = ncov19.getLocationByCountryCode()
-	
-	final_confirmed = f"Заболевших: {location[0]['latest']['confirmed']}"
-	final_deaths = f"Смертей: {location[0]['latest']['deaths']}"
 	
 	if args == 'AZ':
 		location = ncov19.getLocationByCountryCode(str(args))
+		final_confirmed = f"Заболевших: {location[0]['latest']['confirmed']}"
+		final_deaths = f"Смертей: {location[0]['latest']['deaths']}"
 		
 
 # авто-роль
