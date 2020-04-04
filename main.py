@@ -35,14 +35,19 @@ async def corona(ctx, *, args):
 	
 	if args == 'азер':
 		location = ncov19.getLocationByCountryCode("AZ")
+		await ctx.send(final_confirmed + "\n" + final_deaths)
 	elif args == 'укр':
 		location = ncov19.getLocationByCountryCode("UA")
+		await ctx.send(final_confirmed + "\n" + final_deaths)
 	elif args == 'казахстан':
 		location = ncov19.getLocationByCountryCode("KZ")
+		await ctx.send(final_confirmed + "\n" + final_deaths)
 	elif args == 'россия':
 		location = ncov19.getLocationByCountryCode("RU")
+		await ctx.send(final_confirmed + "\n" + final_deaths)
 	elif args == 'CША':
 		location = ncov19.getLocationByCountryCode("Usa")
+		await ctx.send(final_confirmed + "\n" + final_deaths)
 		
 
 # авто-роль
