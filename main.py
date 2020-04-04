@@ -26,7 +26,7 @@ async def corona(ctx, *, args):
 	ncov19 = COVID19Py.COVID19()
 
 	latest = ncov19.getLatest()
-	location = ncov19.getLocationByCountryCode("")
+	location = ncov19.getLocationByCountryCode(args)
 
 	final_confirmed = f"Заболевших: {location[0]['latest']['confirmed']}"
 	final_deaths = f"Смертей: {location[0]['latest']['deaths']}"
