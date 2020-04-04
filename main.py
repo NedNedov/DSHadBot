@@ -3,8 +3,6 @@ import discord
 from discord import utils
 from discord.ext import commands
 import random
-import requests
-import bs4
 import COVID19Py
 # импорт библиотек
 
@@ -18,20 +16,33 @@ client = commands.Bot(command_prefix='.')
 async def clear(ctx, num=5):
     await ctx.channel.purge(limit=num)
 
-# coronainfo
-
+# ncovinfo
 @client.command()
-async def corona(ctx, *, args):	
-	ncov19 = COVID19Py.COVID19()
-	latest = ncov19.getLatest()
+async def corona(ctx, *, args):
+    final_confirmed = f"Заболевших: {location[0]['latest']['confirmed']}"
+    final_deaths = f"Смертей: {location[0]['latest']['deaths']}"
 
-        contry = args
-
-	location = ncov19.getLocationByCountryCode(contry)
-	final_confirmed = f"Заболевших: {location[0]['latest']['confirmed']}"
-	final_deaths = f"Смертей: {location[0]['latest']['deaths']}"
-
-	await ctx.send(final_confirmed + "\n" + final_deaths)
+    if args == 'AZ':
+        location = ncov19.getLocationByCountryCode(args)
+        await (final_confirmed + "\n" + final_deaths)
+    elif args == 'EE':
+        location = ncov19.getLocationByCountryCode(args)
+        await (final_confirmed + "\n" + final_deaths)
+    elif args == 'UA':
+        location = ncov19.getLocationByCountryCode(args)
+        await (final_confirmed + "\n" + final_deaths)
+    elif args == 'US':
+        location = ncov19.getLocationByCountryCode(args)
+        await (final_confirmed + "\n" + final_deaths)
+    elif args == 'RU':
+        location = ncov19.getLocationByCountryCode(args)
+        await (final_confirmed + "\n" + final_deaths)
+    elif args == 'DE':
+        location = ncov19.getLocationByCountryCode(args)
+        await (final_confirmed + "\n" + final_deaths)
+    elif args == 'UK':
+        location = ncov19.getLocationByCountryCode(args)
+        await (final_confirmed + "\n" + final_deaths)
 	
 
 # авто-роль
@@ -96,7 +107,7 @@ async def info(ctx):
 
 @client.command()
 async def askg(ctx, *,args):
-	answers = ['Да','Возможно','Нет','Вероятнее всего','Может быть','Определённо нет','Определённо да']
+	answers = ['Да','Возможно','Нет','Вероятнее всего','Может быть','Определённо нет','Определённо да', 'Не знаю','Не уверен','Дай минуту подумать']
 	await ctx.send("Твой вопрос: " + args + "\nОтвет: " + random.choice(answers))
 
 
