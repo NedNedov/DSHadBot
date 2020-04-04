@@ -23,7 +23,7 @@ async def clear(ctx, num=5):
 
 @client.command()
 async def corona(ctx, *, args):
-    	ncov19 = COVID19Py.COVID19()
+	ncov19 = COVID19Py.COVID19()
 
 	latest = ncov19.getLatest()
 	location = ncov19.getLocationByCountryCode("AZ")
