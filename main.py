@@ -71,7 +71,7 @@ async def who(ctx):
 async def helping(ctx, args):
 
     if args == 'server':
-        await ctx.send("Для информации насчет ботов перейдите в Information. Для получения информации о каком-то канале,после комнады напиши назвние канала.")
+        await ctx.send("Для информации насчет ботов перейдите в Help. Для получения информации о каком-то канале,после комнады напиши назвние канала.")
     elif args == 'chat':
         await ctx.send("Этот канал для общения и разговоров")
     elif args == 'news':
@@ -80,7 +80,7 @@ async def helping(ctx, args):
         await ctx.send("Тут обмен читов для CS:GO")
     elif args == 'disscusion-cheats':
         await ctx.send("Тут обсуждение читов для CS:GO")
-    elif args == 'information':
+    elif args == 'help':
         await ctx.send("Это канал для получения информации о сервере")
     elif args == 'musicselect':
         await ctx.send("Канал для выбора песни для MusicRoom1")
