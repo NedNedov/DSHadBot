@@ -33,8 +33,8 @@ async def clear(ctx, num=5):
 
 @client.command()
 async def corona(ctx, *, args):	
-	if args == 'азер':
-		cr_up.location = cr_up.ncov19.getLocationByCountryCode(str(args))
+	if args == 'AZ':
+		cr_up.location = ncov19.getLocationByCountryCode(str(args))
 		await ctx.send(cr_up.final_confirmed + "\n" + cr_up.final_deaths)
 		
 
