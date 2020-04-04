@@ -9,13 +9,14 @@ import COVID19Py
 # импорт библиотек
 
 # коронавирус
-ncov19 = COVID19Py.COVID19()
+def up_cor():
+	ncov19 = COVID19Py.COVID19()
 
-latest = ncov19.getLatest()
-location = ncov19.getLocationByCountryCode("AZ")
+	latest = ncov19.getLatest()
+	location = ncov19.getLocationByCountryCode("AZ")
 
-final_confirmed = f"Заболевших: {location[0]['latest']['confirmed']}"
-final_deaths = f"Смертей: {location[0]['latest']['deaths']}"
+	final_confirmed = f"Заболевших: {location[0]['latest']['confirmed']}"
+	final_deaths = f"Смертей: {location[0]['latest']['deaths']}"
 
 # client
 
@@ -31,6 +32,7 @@ async def clear(ctx, num=5):
 
 @client.command()
 async def corona(ctx):
+    up_cor()
     await ctx.send(final_confirmed + "\n" + final_deaths)
 
 
