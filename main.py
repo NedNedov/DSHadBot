@@ -6,6 +6,10 @@ import random
 import COVID19Py
 # импорт библиотек
 
+# cor_Client
+ncov19 = COVID19Py.COVID19()
+latest = ncov19.getLatest()
+
 # client
 
 client = commands.Bot(command_prefix='.')
@@ -19,29 +23,40 @@ async def clear(ctx, num=5):
 # ncovinfo
 @client.command()
 async def corona(ctx, *, args):
-    final_confirmed = f"Заболевших: {location[0]['latest']['confirmed']}"
-    final_deaths = f"Смертей: {location[0]['latest']['deaths']}"
-
     if args == 'AZ':
         location = ncov19.getLocationByCountryCode(args)
+        final_confirmed = f"Заболевших: {location[0]['latest']['confirmed']}"
+        final_deaths = f"Смертей: {location[0]['latest']['deaths']}"
         await (final_confirmed + "\n" + final_deaths)
     elif args == 'EE':
         location = ncov19.getLocationByCountryCode(args)
+        final_confirmed = f"Заболевших: {location[0]['latest']['confirmed']}"
+        final_deaths = f"Смертей: {location[0]['latest']['deaths']}"
         await (final_confirmed + "\n" + final_deaths)
     elif args == 'UA':
         location = ncov19.getLocationByCountryCode(args)
+        final_confirmed = f"Заболевших: {location[0]['latest']['confirmed']}"
+        final_deaths = f"Смертей: {location[0]['latest']['deaths']}"
         await (final_confirmed + "\n" + final_deaths)
     elif args == 'US':
         location = ncov19.getLocationByCountryCode(args)
+        final_confirmed = f"Заболевших: {location[0]['latest']['confirmed']}"
+        final_deaths = f"Смертей: {location[0]['latest']['deaths']}"
         await (final_confirmed + "\n" + final_deaths)
     elif args == 'RU':
         location = ncov19.getLocationByCountryCode(args)
+        final_confirmed = f"Заболевших: {location[0]['latest']['confirmed']}"
+        final_deaths = f"Смертей: {location[0]['latest']['deaths']}"
         await (final_confirmed + "\n" + final_deaths)
     elif args == 'DE':
         location = ncov19.getLocationByCountryCode(args)
+        final_confirmed = f"Заболевших: {location[0]['latest']['confirmed']}"
+        final_deaths = f"Смертей: {location[0]['latest']['deaths']}"
         await (final_confirmed + "\n" + final_deaths)
     elif args == 'UK':
         location = ncov19.getLocationByCountryCode(args)
+        final_confirmed = f"Заболевших: {location[0]['latest']['confirmed']}"
+        final_deaths = f"Смертей: {location[0]['latest']['deaths']}"
         await (final_confirmed + "\n" + final_deaths)
 	
 
