@@ -53,13 +53,11 @@ async def corona(ctx, *, args):
         final_confirmed = f"Заболевших: {location[0]['latest']['confirmed']}"
         final_deaths = f"Смертей: {location[0]['latest']['deaths']}"
         await ctx.send(final_confirmed + "\n" + final_deaths)
-    elif args == 'EU':
-        location = ncov19.getLocationByCountryCode(args)
-        final_confirmed = f"Заболевших: {location[0]['latest']['confirmed']}"
-        final_deaths = f"Смертей: {location[0]['latest']['deaths']}"
-        await ctx.send(final_confirmed + "\n" + final_deaths)
-	
-	
+    elif args == 'W':
+	all_cases = ncov19.getAll()
+	final_all = f"Заболевших: {all_cases['latest']['confirmed']}"
+	final_all_d = f"Смертей: {all_cases['latest']['deaths']}"
+	await ctx.send(final_all + "\n" + final_all_d)
 
 # авто-роль
 
