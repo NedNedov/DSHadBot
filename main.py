@@ -27,37 +27,37 @@ async def corona(ctx, *, args):
         location = ncov19.getLocationByCountryCode(args)
         final_confirmed = f"Заболевших: {location[0]['latest']['confirmed']}"
         final_deaths = f"Смертей: {location[0]['latest']['deaths']}"
-        await (final_confirmed + "\n" + final_deaths)
+        await ctx.send(final_confirmed + "\n" + final_deaths)
     elif args == 'EE':
         location = ncov19.getLocationByCountryCode(args)
         final_confirmed = f"Заболевших: {location[0]['latest']['confirmed']}"
         final_deaths = f"Смертей: {location[0]['latest']['deaths']}"
-        await (final_confirmed + "\n" + final_deaths)
+        await ctx.send(final_confirmed + "\n" + final_deaths)
     elif args == 'UA':
         location = ncov19.getLocationByCountryCode(args)
         final_confirmed = f"Заболевших: {location[0]['latest']['confirmed']}"
         final_deaths = f"Смертей: {location[0]['latest']['deaths']}"
-        await (final_confirmed + "\n" + final_deaths)
+        await ctx.send(final_confirmed + "\n" + final_deaths)
     elif args == 'US':
         location = ncov19.getLocationByCountryCode(args)
         final_confirmed = f"Заболевших: {location[0]['latest']['confirmed']}"
         final_deaths = f"Смертей: {location[0]['latest']['deaths']}"
-        await (final_confirmed + "\n" + final_deaths)
+        await ctx.send(final_confirmed + "\n" + final_deaths)
     elif args == 'RU':
         location = ncov19.getLocationByCountryCode(args)
         final_confirmed = f"Заболевших: {location[0]['latest']['confirmed']}"
         final_deaths = f"Смертей: {location[0]['latest']['deaths']}"
-        await (final_confirmed + "\n" + final_deaths)
+        await ctx.send(final_confirmed + "\n" + final_deaths)
     elif args == 'DE':
         location = ncov19.getLocationByCountryCode(args)
         final_confirmed = f"Заболевших: {location[0]['latest']['confirmed']}"
         final_deaths = f"Смертей: {location[0]['latest']['deaths']}"
-        await (final_confirmed + "\n" + final_deaths)
+        await ctx.send(final_confirmed + "\n" + final_deaths)
     elif args == 'UK':
         location = ncov19.getLocationByCountryCode(args)
         final_confirmed = f"Заболевших: {location[0]['latest']['confirmed']}"
         final_deaths = f"Смертей: {location[0]['latest']['deaths']}"
-        await (final_confirmed + "\n" + final_deaths)
+        await ctx.send(final_confirmed + "\n" + final_deaths)
 	
 
 # авто-роль
