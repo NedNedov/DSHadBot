@@ -26,9 +26,10 @@ async def corona(ctx, *, args):
 	latest = ncov19.getLatest()
 	
 	if args == 'AZ':
-		location = ncov19.getLocationByCountryCode(str(args))
+		location = ncov19.getLocationByCountryCode(args)
 		final_confirmed = f"Заболевших: {location[0]['latest']['confirmed']}"
 		final_deaths = f"Смертей: {location[0]['latest']['deaths']}"
+		await ctx.send(final_confirmed + "\n" + final_deaths)
 		
 
 # авто-роль
