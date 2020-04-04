@@ -9,7 +9,7 @@ import COVID19Py
 # импорт библиотек
 
 # коронавирус
-async def up_cor(ctx, args):
+async def up_cor():
 	ncov19 = COVID19Py.COVID19()
 
 	latest = ncov19.getLatest()
