@@ -35,7 +35,7 @@ async def corona(ctx, *, args):
 		final_confirmed = f"Заболевших: {location[0]['latest']['confirmed']}"
 		final_deaths = f"Смертей: {location[0]['latest']['deaths']}"
 		await ctx.send(final_confirmed + "\n" + final_deaths)
-	elif args == 'USA':
+	elif args == 'US':
 		location = ncov19.getLocationByCountryCode('Usa')
 		final_confirmed = f"Заболевших: {location[0]['latest']['confirmed']}"
 		final_deaths = f"Смертей: {location[0]['latest']['deaths']}"
