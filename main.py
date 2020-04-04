@@ -8,17 +8,6 @@ import bs4
 import COVID19Py
 # импорт библиотек
 
-# коронавирус
-async def up_cor():
-	ncov19 = COVID19Py.COVID19()
-
-	latest = ncov19.getLatest()
-	location = ncov19.getLocationByCountryCode("AZ")
-
-	final_confirmed = f"Заболевших: {location[0]['latest']['confirmed']}"
-	final_deaths = f"Смертей: {location[0]['latest']['deaths']}"
-	
-	await ctx.send(final_confirmed + "\n" + final_deaths)
 
 # client
 
@@ -33,9 +22,28 @@ async def clear(ctx, num=5):
 # coronainfo
 
 @client.command()
-async def corona(ctx):
-    up_cor()
+async def corona(ctx, *, args):
+    	ncov19 = COVID19Py.COVID19()
 
+	latest = ncov19.getLatest()
+	location = ncov19.getLocationByCountryCode("AZ")
+
+	final_confirmed = f"Заболевших: {location[0]['latest']['confirmed']}"
+	final_deaths = f"Смертей: {location[0]['latest']['deaths']}"
+	
+	await ctx.send(final_confirmed + "\n" + final_deaths)
+	
+	if args == 'азер':
+		location = ncov19.getLocationByCountryCode("AZ")
+	elif args == 'укр':
+		location = ncov19.getLocationByCountryCode("UA")
+	elif args == 'казахстан':
+		location = ncov19.getLocationByCountryCode("KZ")
+	elif args == 'россия':
+		location = ncov19.getLocationByCountryCode("RU")
+	elif args == 'CША':
+		location = ncov19.getLocationByCountryCode("Usa")
+		
 
 # авто-роль
 
