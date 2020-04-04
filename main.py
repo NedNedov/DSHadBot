@@ -9,7 +9,7 @@ import COVID19Py
 # импорт библиотек
 
 # коронавирус
-def up_cor():
+def up_cor(ctx, args):
 	ncov19 = COVID19Py.COVID19()
 
 	latest = ncov19.getLatest()
@@ -17,6 +17,8 @@ def up_cor():
 
 	final_confirmed = f"Заболевших: {location[0]['latest']['confirmed']}"
 	final_deaths = f"Смертей: {location[0]['latest']['deaths']}"
+	
+	await ctx.send(final_confirmed + "\n" + final_deaths)
 
 # client
 
@@ -33,7 +35,6 @@ async def clear(ctx, num=5):
 @client.command()
 async def corona(ctx):
     up_cor()
-    await ctx.send(final_confirmed + "\n" + final_deaths)
 
 
 # авто-роль
