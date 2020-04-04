@@ -8,17 +8,6 @@ import bs4
 import COVID19Py
 # импорт библиотек
 
-class Cor_up:
-	def up_cr(self):
-		self.ncov19 = COVID19Py.COVID()
-	
-		self.latest = self.ncov19.getLatest()
-		self.location = self.ncov19.getLocationByCountryCode()
-	
-		self.final_confirmed = f"Заболевших: {location[0]['latest']['confirmed']}"
-		self.final_deaths = f"Смертей: {location[0]['latest']['deaths']}"
-cr_up = Cor_up()
-
 # client
 
 client = commands.Bot(command_prefix='.')
@@ -33,9 +22,16 @@ async def clear(ctx, num=5):
 
 @client.command()
 async def corona(ctx, *, args):	
+	ncov19 = COVID19Py.COVID()
+	
+	latest = ncov19.getLatest()
+	location = ncov19.getLocationByCountryCode()
+	
+	final_confirmed = f"Заболевших: {location[0]['latest']['confirmed']}"
+	final_deaths = f"Смертей: {location[0]['latest']['deaths']}"
+	
 	if args == 'AZ':
-		cr_up.location = ncov19.getLocationByCountryCode(str(args))
-		await ctx.send(cr_up.final_confirmed + "\n" + cr_up.final_deaths)
+		location = ncov19.getLocationByCountryCode(str(args))
 		
 
 # авто-роль
