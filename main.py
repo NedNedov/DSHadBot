@@ -16,7 +16,11 @@ client = commands.Bot(command_prefix='.')
 # команда для очистки чата
 @client.command()
 async def clear(ctx, num=5):
-    await ctx.channel.purge(limit=num)
+	if num > 250:
+		await ctx.send("Слишком большое число")
+	else:
+		await ctx.channel.purge(limit=num)
+	
 
 # ncovinfo
 @client.command()
