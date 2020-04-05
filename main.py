@@ -10,10 +10,11 @@ client = commands.Bot(command_prefix='.')
 
 # команда для очистки чата
 @client.command()
-async def clear(ctx, *,num=5):
+async def clear(ctx, num=5):
 	numstr = list(str(num))
 	if int(num) > 250:
 		await ctx.send("Слишком большое число")
+		await ctx.send(numstr)
 	elif '+' in numstr:
 		await ctx.send('Неправильный ввод')
 	else:
