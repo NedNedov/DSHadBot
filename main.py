@@ -112,8 +112,12 @@ async def info(ctx):
 # да/нет игра
 @client.command()
 async def askg(ctx, *,args):
-	answers = ['Да','Возможно','Нет','Вероятнее всего','Может быть','Определённо нет','Определённо да', 'Не знаю','Не уверен','Дай минуту подумать']
-	await ctx.send("Твой вопрос: " + args + "\nОтвет: " + random.choice(answers))
+        bad = ['michael', 'jackson', 'Майкл, 'майкл', 'Michael', 'Jackson', 'MICHAEL', 'JACKSON', 'ДЖЕКСОН, 'МАЙКЛ']
+        for el in bad:
+            if el in args:
+                ctx.channel.purge(limit=2)
+        answers = ['Да','Возможно','Нет','Вероятнее всего','Может быть','Определённо нет','Определённо да', 'Не знаю','Не уверен','Дай минуту подумать']
+        await ctx.send("Твой вопрос: " + args + "\nОтвет: " + random.choice(answers))
 
 
 # RUN
