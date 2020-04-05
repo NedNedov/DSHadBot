@@ -15,10 +15,7 @@ async def clear(ctx, num=5):
 	if int(num) > 250:
 		await ctx.send("Слишком большое число")
 	else:
-		await ctx.channel.purge(limit=num)
-	if '+' or '-' or  '*' or '/' or ':' in numstr:
-		await ctx.send('Неправильный ввод')
-		
+		await ctx.channel.purge(limit=num)	
 
 # авто-роль
 @client.event
@@ -76,7 +73,7 @@ async def info(ctx):
 @client.command()
 async def askg(ctx, *,args):
         # warning = ['michael', 'jackson', 'Майкл, 'майкл', 'Michael', 'Jackson', 'MICHAEL', 'JACKSON', 'ДЖЕКСОН, 'МАЙКЛ']
-        answers = ['Да','Возможно','Нет','Вероятнее всего','Может быть','Определённо нет','Определённо да', 'Не знаю','Не уверен','Дай минуту подумать']
+        answers = ['Да','Возможно','Нет','Вероятнее всего','Может быть','Определённо нет','Определённо да', 'Не знаю','Интересный вопрос,но отвечать я на него не буду','Не уверен','Дай минуту подумать']
         await ctx.send("Твой вопрос: " + args + "\nОтвет: " + random.choice(answers))
 
 
