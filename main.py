@@ -13,9 +13,11 @@ client = commands.Bot(command_prefix='.')
 async def clear(ctx, *,num=5):
 	if int(num) > 250:
 		await ctx.send("Слишком большое число")
+	elif '+' in list(str(num)):
+		await ctx.send('Неправильный ввод')
 	else:
 		await ctx.channel.purge(limit=num)
-		await ctx.send(list(num))
+		
 
 # авто-роль
 @client.event
