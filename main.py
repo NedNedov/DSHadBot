@@ -4,11 +4,6 @@ import discord
 from discord import utils
 from discord.ext import commands
 import random
-import COVID19Py
-
-# cor_Client
-ncov19 = COVID19Py.COVID19()
-latest = ncov19.getLatest()
 
 # client
 client = commands.Bot(command_prefix='.')
@@ -20,46 +15,6 @@ async def clear(ctx, num=5):
 		await ctx.send("Слишком большое число")
 	else:
 		await ctx.channel.purge(limit=num)
-	
-
-# ncovinfo
-@client.command()
-async def corona(ctx, *, args):
-	if args == 'AZ':
-		location = ncov19.getLocationByCountryCode(args)
-		final_confirmed = f"Заболевших: {location[0]['latest']['confirmed']}"
-		final_deaths = f"Смертей: {location[0]['latest']['deaths']}"
-		await ctx.send(final_confirmed + "\n" + final_deaths)
-	elif args == 'EE':
-		location = ncov19.getLocationByCountryCode(args)
-		final_confirmed = f"Заболевших: {location[0]['latest']['confirmed']}"
-		final_deaths = f"Смертей: {location[0]['latest']['deaths']}"
-		await ctx.send(final_confirmed + "\n" + final_deaths)
-	elif args == 'UA':
-		location = ncov19.getLocationByCountryCode(args)
-		final_confirmed = f"Заболевших: {location[0]['latest']['confirmed']}"
-		final_deaths = f"Смертей: {location[0]['latest']['deaths']}"
-		await ctx.send(final_confirmed + "\n" + final_deaths)
-	elif args == 'RU':
-		location = ncov19.getLocationByCountryCode(args)
-		final_confirmed = f"Заболевших: {location[0]['latest']['confirmed']}"
-		final_deaths = f"Смертей: {location[0]['latest']['deaths']}"
-		await ctx.send(final_confirmed + "\n" + final_deaths)
-	elif args == 'DE':
-		location = ncov19.getLocationByCountryCode(args)
-		final_confirmed = f"Заболевших: {location[0]['latest']['confirmed']}"
-		final_deaths = f"Смертей: {location[0]['latest']['deaths']}"
-		await ctx.send(final_confirmed + "\n" + final_deaths)
-	elif args == 'US':
-		location = ncov19.getLocationByCountryCode(args)
-		final_confirmed = f"Заболевших: {location[0]['latest']['confirmed']}"
-		final_deaths = f"Смертей: {location[0]['latest']['deaths']}"
-		await ctx.send(final_confirmed + "\n" + final_deaths)
-	elif args == 'W':
-		all_cases = ncov19.getAll()
-		final_all = f"Заболевших: {all_cases['latest']['confirmed']}"
-		final_all_d = f"Смертей: {all_cases['latest']['deaths']}"
-		await ctx.send(final_all + "\n" + final_all_d)
 
 # авто-роль
 @client.event
