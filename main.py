@@ -14,11 +14,10 @@ async def clear(ctx, num=5):
 	numstr = list(str(num))
 	if int(num) > 250:
 		await ctx.send("Слишком большое число")
-		await ctx.send(numstr)
-	elif '+' in numstr:
-		await ctx.send('Неправильный ввод')
 	else:
 		await ctx.channel.purge(limit=num)
+	if '+' or '-' or  '*' or '/' or ':' in numstr:
+		await ctx.send('Неправильный ввод')
 		
 
 # авто-роль
