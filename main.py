@@ -18,13 +18,16 @@ async def on_member_join(member):
 # goodbye
 @client.event
 async def on_member_remove(member):
-    channel = discord.utils.get(member.guild.channels, id = int("582894293551677451"))
+    channel = discord.utils.get = (member.guild.channels, id = int("582894293551677451"))
     await channel.send(f"{member} 𝐥𝐞𝐟𝐭 𝐮𝐬 𝐟𝐨𝐫 𝐚𝐧 𝐮𝐧𝐤𝐧𝐨𝐰𝐧 𝐫𝐞𝐚𝐬𝐨𝐧 :(")
 
 # clearing
 @client.command()
 async def cl(ctx, n = 3):
-    await ctx.channel.purge(limit = n)
+    if len(list(int(n))) > 3:
+        await ctx.send('Слишком большое число')
+    else:
+        await ctx.channel.purge(limit = n)
 
 # o/r game
 @client.command()
