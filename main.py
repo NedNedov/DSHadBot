@@ -17,7 +17,7 @@ async def on_member_join(ctx, member : discord.Member):
     await member.add_roles(role)
 
 # goodbye
-@clinet.event
+@client.event
 async def on_member_remove(ctx, member : discord.Member):
     await ctx.send(f"{member} 𝐥𝐞𝐟𝐭 𝐮𝐬 𝐟𝐨𝐫 𝐚𝐧 𝐮𝐧𝐤𝐧𝐨𝐰𝐧 𝐫𝐞𝐚𝐬𝐨𝐧 :(")
 
