@@ -11,14 +11,14 @@ client = commands.Bot(command_prefix='.')
 
 # auto-role
 @client.event
-async def on_member_join(ctx, member : discord.Member):
+async def on_member_join(ctx, *, member : discord.Member):
     role = discord.utils.get(member.guild.roles, id = int("689396798879563843"))
     await ctx.send(f"{member} joined! Welcome :)")
     await member.add_roles(role)
 
 # goodbye
 @client.event
-async def on_member_remove(ctx, member : discord.Member):
+async def on_member_remove(ctx, *, member : discord.Member):
     await ctx.send(f"{member} 𝐥𝐞𝐟𝐭 𝐮𝐬 𝐟𝐨𝐫 𝐚𝐧 𝐮𝐧𝐤𝐧𝐨𝐰𝐧 𝐫𝐞𝐚𝐬𝐨𝐧 :(")
 
 # clearing
@@ -28,7 +28,7 @@ async def cl(ctx, n = 3):
 
 # o/r game
 @client.command()
-async def c(ctx, *, args):
+async def q(ctx, *, args):
     if args == random.choice(coin_vars := ['орел','решка']):
         await ctx.send('Да! Правильный ответ: ' + args)
     elif args not in coin_vars:
@@ -46,7 +46,7 @@ async def ag(ctx, *, args):
 
 # help
 @client.command()
-async def h(ctx):
+async def h(ctx, args):
     await ctx.send(dictionary.helping)
 
 # information
