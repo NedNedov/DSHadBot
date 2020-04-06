@@ -57,6 +57,11 @@ async def h(ctx):
 async def i(ctx):
     await ctx.send(dictionary.info)
 
+# whois
+@client.command()
+async def w(ctx):
+    await ctx.send(dictionary.who_am_i)
+
 # RUN
 token = os.environ.get('BOT_TOKEN')
 client.run(str(token))
