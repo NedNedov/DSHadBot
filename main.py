@@ -49,7 +49,7 @@ async def ag(ctx, *, args):
 
 # help
 @client.command()
-async def h(ctx, args):
+async def h(ctx):
     await ctx.send(dictionary.helping)
 
 # information
