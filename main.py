@@ -24,7 +24,7 @@ async def on_member_remove(member):
 # clearing
 @client.command()
 async def cl(ctx, n = 3):
-    if len(list(n)) > 3:
+    if len(list(str(n))) > 3:
         await ctx.send('Слишком большое число')
     else:
         await ctx.channel.purge(limit = n)
