@@ -1,81 +1,58 @@
-# импорт библиотек
 import os
+import random
 import discord
+import dictionary
 from discord import utils
 from discord.ext import commands
-import random
+# импорт библиотек
 
 # client
 client = commands.Bot(command_prefix='.')
 
-# команда для очистки чата
-@client.command()
-async def clear(ctx, num=5):
-	numstr = list(str(num))
-	if int(num) > 250:
-		await ctx.send("Слишком большое число")
-	else:
-		await ctx.channel.purge(limit=num)	
-
-# авто-роль
+# auto-role
 @client.event
-async def on_member_join(member):
-    role = discord.utils.get(member.guild.roles, id=int("689396798879563843"))
+async def on_member_join(ctx, member : discord.Member):
+    role = discord.utils.get(member.guild.roles, id = int("689396798879563843"))
+    await ctx.send(f"{member} joined! Welcome :)")
     await member.add_roles(role)
 
-# прощание
-@client.event
-async def on_member_remove(member):
-	channel = discord.utils.get(
-	member.guild.channels, id=int("582894293551677451"))
-	await channel.send(f"{member} 𝙡𝙚𝙛𝙩 𝙪𝙨! 𝘽𝙮𝙚 𝘽𝙮𝙚...")
+# goodbye
+@clinet.event
+async def on_member_remove(ctx, member : discord.Member):
+    await ctx.send(f"{member} 𝐥𝐞𝐟𝐭 𝐮𝐬 𝐟𝐨𝐫 𝐚𝐧 𝐮𝐧𝐤𝐧𝐨𝐰𝐧 𝐫𝐞𝐚𝐬𝐨𝐧 :(")
 
-# орел/решка игра
+# clearing
 @client.command()
-async def coin(ctx, args):
-    variants = ['Орёл', 'Решка']
-    if args == 'орел' or 'орёл':
-        await ctx.send('Правильный ответ: ' + random.choice(variants))
-    elif args == 'решка':
-        await ctx.send('Правильный ответ: ' + random.choice(variants))
+async def cl(ctx, n = 3):
+    await ctx.channel.purge(limit = n)
 
-# представление
+# o/r game
 @client.command()
-async def who(ctx):
-    await ctx.send("Я Rudolf Hadler, помощник и бот на этом сервере.Всем хорошего дня и побед в играх!")
+async def q(ctx, *, args):
+    if args == random.choice(coin_vars := ['орел','решка']):
+        await ctx.send('Да! Правильный ответ: ' + args)
+    elif args not in coin_vars:
+        await ctx.send('Напиши нормальный вариант')
+    else:
+        await ctx.send('Неа...Подкинь еще раз')
 
-# помощь
+# ask game
 @client.command()
-async def helping(ctx, args):
+async def ag(ctx, *, args):
+    if (ecx := len(list(args))) < 3:
+        await ctx.send("Напиши нормальный вопрос")
+    else:
+        await ctx.send('Твой вопрос: ' + args + '\nОтвет:' + random.choice(dictionary.answers))
 
-    if args == 'server':
-        await ctx.send("Для информации насчет ботов перейдите в Help. Для получения информации о каком-то канале,после комнады напиши назвние канала.")
-    elif args == 'chat':
-        await ctx.send("Этот канал для общения и разговоров")
-    elif args == 'news':
-        await ctx.send("Тут переодически появляются новости сервера")
-    elif args == 'cheats':
-        await ctx.send("Тут обмен читов для CS:GO")
-    elif args == 'disscusion-cheats':
-        await ctx.send("Тут обсуждение читов для CS:GO")
-    elif args == 'help':
-        await ctx.send("Это канал для получения информации о сервере")
-    elif args == 'musicselect':
-        await ctx.send("Канал для выбора песни для MusicRoom1")
-
-
-# информация
+# help
 @client.command()
-async def info(ctx):
-    await ctx.send("На этом дискорд сервере ты встретишь дружелюбных и адекватных людей,хорошую администрацию,Музыкального Бота и другое(над сервером ведётся работа,если есть идеи пишите а ЛС в Discord 𝐅𝐨𝐧𝐭𝐨𝐦𝐎𝐜𝐡𝐤𝐚#2686)")
+async def h(ctx, args):
+    await ctx.send(dictionary.helping)
 
-# да/нет игра
+# information
 @client.command()
-async def askg(ctx, *,args):
-        # warning = ['michael', 'jackson', 'Майкл, 'майкл', 'Michael', 'Jackson', 'MICHAEL', 'JACKSON', 'ДЖЕКСОН, 'МАЙКЛ']
-        answers = ['Да','Возможно','Нет','Вероятнее всего','Может быть','Определённо нет','Определённо да', 'Не знаю','Интересный вопрос,но отвечать я на него не буду','Не уверен','Дай минуту подумать']
-        await ctx.send("Твой вопрос: " + args + "\nОтвет: " + random.choice(answers))
-
+async def i(ctx):
+    await ctx.send(dictionary.info)
 
 # RUN
 token = os.environ.get('BOT_TOKEN')
