@@ -11,15 +11,15 @@ client = commands.Bot(command_prefix='.')
 
 # auto-role
 @client.event
-async def on_member_join(ctx, *, member : discord.Member):
+async def on_member_join(member):
     role = discord.utils.get(member.guild.roles, id = int("689396798879563843"))
-    await ctx.send(f"{member} joined! Welcome :)")
     await member.add_roles(role)
 
 # goodbye
 @client.event
-async def on_member_remove(ctx, *, member : discord.Member):
-    await ctx.send(f"{member} 𝐥𝐞𝐟𝐭 𝐮𝐬 𝐟𝐨𝐫 𝐚𝐧 𝐮𝐧𝐤𝐧𝐨𝐰𝐧 𝐫𝐞𝐚𝐬𝐨𝐧 :(")
+async def on_member_remove(member):
+    channel = discord.utils.get = (member.guild.channels, id = int("582894293551677451"))
+    await channel.send(f"{member} 𝐥𝐞𝐟𝐭 𝐮𝐬 𝐟𝐨𝐫 𝐚𝐧 𝐮𝐧𝐤𝐧𝐨𝐰𝐧 𝐫𝐞𝐚𝐬𝐨𝐧 :(")
 
 # clearing
 @client.command()
