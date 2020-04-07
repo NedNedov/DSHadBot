@@ -22,7 +22,7 @@ async def on_member_remove(member):
     await channel.send(f"{member} 𝐥𝐞𝐟𝐭 𝐮𝐬 𝐟𝐨𝐫 𝐚𝐧 𝐮𝐧𝐤𝐧𝐨𝐰𝐧 𝐫𝐞𝐚𝐬𝐨𝐧 :(")
 
 @client.event
-async def on_message(message, ctx):
+async def on_message(message, ctx : discord.ext):
     if message.content == 'сука':
         await ctx.channel.purge(limit = 1)
 
