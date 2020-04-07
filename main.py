@@ -21,13 +21,6 @@ async def on_member_remove(member):
     channel = discord.utils.get(member.guild.channels, id = int("582894293551677451"))
     await channel.send(f"{member} 𝐥𝐞𝐟𝐭 𝐮𝐬 𝐟𝐨𝐫 𝐚𝐧 𝐮𝐧𝐤𝐧𝐨𝐰𝐧 𝐫𝐞𝐚𝐬𝐨𝐧 :(")
 
-@client.event
-async def on_message(message):
-    for bad_w in dictionary.bad_words:
-        if bad_w in (message_content := message.content):
-            await client.send_message(message.channel, "That's bad word")
-            await client.delete_message(message)
-
 # clearing
 @client.command()
 async def cl(ctx, n = 3):
