@@ -62,6 +62,13 @@ async def i(ctx):
 async def w(ctx):
     await ctx.send(dictionary.who_am_i)
 
+# members list
+@client.command()
+async def s(ctx):
+    for guild in client.guilds:
+        for member in guild.members:
+            await ctx.send(member)
+
 # RUN
 token = os.environ.get('BOT_TOKEN')
 client.run(str(token))
