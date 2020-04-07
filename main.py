@@ -21,6 +21,11 @@ async def on_member_remove(member):
     channel = discord.utils.get(member.guild.channels, id = int("582894293551677451"))
     await channel.send(f"{member} 𝐥𝐞𝐟𝐭 𝐮𝐬 𝐟𝐨𝐫 𝐚𝐧 𝐮𝐧𝐤𝐧𝐨𝐰𝐧 𝐫𝐞𝐚𝐬𝐨𝐧 :(")
 
+@client.event
+async def on_message(message, ctx):
+    if message.content == 'сука':
+        await ctx.channel.purge(limit = 1)
+
 # clearing
 @client.command()
 async def cl(ctx, n = 3):
@@ -45,7 +50,7 @@ async def ag(ctx, *, args):
     if (ecx := len(list(args))) < 3:
         await ctx.send("Напиши нормальный вопрос")
     else:
-        await ctx.send('Твой вопрос: ' + args + '\nОтвет:' + random.choice(dictionary.answers))
+        await ctx.send('Твой вопрос: ' + args + '\nОтвет: ' + random.choice(dictionary.answers))
 
 # help
 @client.command()
