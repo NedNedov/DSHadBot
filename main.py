@@ -32,7 +32,9 @@ async def cl(ctx, n = 3):
 # o/r game
 @client.command()
 async def c(ctx, *, args):
-    if args == random.choice(coin_vars := ['орел','решка']):
+    if args == None:
+        await ctx.send('Напиши орел или решка')
+    elif args == random.choice(coin_vars := ['орел','решка']):
         await ctx.send('Да! Правильный ответ: ' + args)
     elif args not in coin_vars:
         await ctx.send('Напиши нормальный вариант')
