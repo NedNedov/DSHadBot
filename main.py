@@ -52,9 +52,9 @@ async def ag(ctx, *, args):
 # numbers game
 @client.command()
 async def rn(ctx, args, rangei):
-    if args == (n := random.choice(range(0, rangei))):
+    if int(args) == int((n := random.choice(range(0, rangei)))):
         await ctx.send('На этот раз повезло!Я выбрал ' + n + " ,как ты")
-    elif args > rangei:
+    elif int(args) > int(rangei):
         await ctx.send('Ты выбираешь число,которое больше выбранного диапозона')
     else:
         await ctx.send('Лузер,не угадал...Я загадал: ' + n)
