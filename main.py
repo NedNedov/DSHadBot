@@ -53,7 +53,7 @@ async def ag(ctx, *, args):
 @client.command()
 async def rn(ctx, args, rangei):
     if int(args) == (n := random.choice(range(0, int(rangei)))):
-        await ctx.send('На этот раз повезло!Я выбрал ' + str(n) + " ,как ты")
+        await ctx.send('На этот раз повезло!Я выбрал ' + str(n) + " ,как и ты")
     elif int(args) > int(rangei):
         await ctx.send('Ты выбираешь число,которое больше выбранного диапозона')
     else:
