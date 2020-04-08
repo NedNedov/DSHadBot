@@ -62,12 +62,10 @@ async def i(ctx):
 async def w(ctx):
     await ctx.send(dictionary.who_am_i)
 
-# members list
+# cr info
 @client.command()
-async def s(ctx):
-    for guild in client.guilds:
-            for member in guild.members:
-                await ctx.send(len(mem_ls := member))
+async def cr(ctx):
+    await ctx.send(dictionary.creator_info)
 
 # RUN
 token = os.environ.get('BOT_TOKEN')
