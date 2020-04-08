@@ -49,6 +49,16 @@ async def ag(ctx, *, args):
     else:
         await ctx.send('Твой вопрос: ' + args + '\nОтвет: ' + random.choice(dictionary.answers))
 
+# numbers game
+@client.command()
+async def rn(ctx, args, rangei):
+    if args == (n := random.choice(range(0, rangei))):
+        await ctx.send('На этот раз повезло!Я выбрал ' + n + " ,как ты")
+    elif args > rangei:
+        await ctx.send('Ты выбираешь число,которое больше выбранного диапозона')
+    else:
+        await ctx.send('Лузер,не угадал...Я загадал: ' + n)
+
 # help
 @client.command()
 async def h(ctx):
