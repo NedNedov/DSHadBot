@@ -79,6 +79,16 @@ async def w(ctx):
 async def cr(ctx):
     await ctx.send(dictionary.creator_info)
 
+# random num bot
+@client.command()
+async def rnb(ctx, args, rangei):
+    if (bot_c := random.choice(range(0, (rangeint := int(rangei))))) == (arg := int(args)):
+        await ctx.send('Твое число: ' + args + 'Это было проще простого')
+    elif arg > rangeint:
+        await ctx.send('Ты жульничаешь')
+    else:
+        await ctx.send('Я думал: ' + str(bot_c) + 'Я не угадал...')
+
 # RUN
 token = os.environ.get('BOT_TOKEN')
 client.run(str(token))
