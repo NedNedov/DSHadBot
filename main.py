@@ -87,7 +87,7 @@ async def rnb(ctx, args, rangei):
     elif arg > rangeint:
         await ctx.send('Ты жульничаешь')
     else:
-        await ctx.send('Я думал: ' + str(bot_c) + 'Я не угадал...')
+        await ctx.send('Я думал: ' + str(bot_c) + '\nЯ не угадал...')
 
 # RUN
 token = os.environ.get('BOT_TOKEN')
