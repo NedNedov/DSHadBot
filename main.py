@@ -12,7 +12,7 @@ client = commands.Bot(command_prefix='.')
 # auto-role
 @client.event
 async def on_member_join(member):
-    role = discord.utils.get(member.guild.roles, id = int("689396798879563843"))
+    role = discord.utils.get(member.guild.roles, id = int("699189972393000970"))
     await member.add_roles(role)
 
 # goodbye
