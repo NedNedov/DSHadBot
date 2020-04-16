@@ -1,5 +1,4 @@
 import os
-import time
 import random
 import discord
 import dictionary
@@ -83,7 +82,7 @@ async def cr(ctx):
 # member online
 @client.command()
 async def mon(ctx):
-    awayt ctx.send("Members online: " + (len[member.name for member in message.server.members]))
+    await ctx.send("Members online: " + (len[member.name in message.server.members]))
 
 # random num bot
 @client.command()
