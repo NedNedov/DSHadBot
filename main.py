@@ -81,9 +81,9 @@ async def cr(ctx):
     await ctx.send(dictionary.creator_info)
 
 # member online
-@client.command(pass_context=True)
+@client.command()
 async def mon(ctx):
-    await ctx.send("`{0.name} has this amount of members: {0.member_count}`".format(ctx.message.server))
+    awayt ctx.send("Members online: " + (len[member.name for member in message.server.members]))
 
 # random num bot
 @client.command()
