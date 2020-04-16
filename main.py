@@ -1,4 +1,5 @@
 import os
+import time
 import random
 import discord
 import dictionary
@@ -86,8 +87,10 @@ async def mon(ctx):
     for user in ctx.guild.members:
         if user.status != discord.Status.offline:
             members.append(user)
+            await ctx.send("Смотрю....")
             mems = len(members)
-            await ctx.send(mems)
+            time.sleep(10)
+            await ctx.send("Онлайн на сервере:" + mems)
 
 # random num bot
 @client.command()
