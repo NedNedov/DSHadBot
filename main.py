@@ -89,7 +89,7 @@ async def mon(ctx):
             members.append(user)
             await ctx.send("Смотрю....")
             mems = len(members)
-            time.sleep(10)
+            time.sleep(5.5)
             await ctx.send("Онлайн на сервере:" + mems)
 
 # random num bot
