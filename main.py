@@ -82,8 +82,7 @@ async def cr(ctx):
 # member online
 @client.command()
 async def mon(ctx):
-    await ctx.send("All members: " + str(len(ctx.guild.members)))
-    await ctx.send("Online: " + str(len(ctx.guild.members.status.online)))
+    await ctx.send("All members: " + str(len(ctx.guild.members)) + "\nOnline: working on it"
 
 # random num bot
 @client.command()
