@@ -83,7 +83,7 @@ async def cr(ctx):
 # member online
 @client.command(pass_context=True)
 async def mon(ctx):
-    await client.say("`{0.name} has this amount of members: {0.member_count}`".format(ctx.message.server))
+    await ctx.send("`{0.name} has this amount of members: {0.member_count}`".format(ctx.message.server))
 
 # random num bot
 @client.command()
