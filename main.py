@@ -79,6 +79,13 @@ async def w(ctx):
 async def cr(ctx):
     await ctx.send(dictionary.creator_info)
 
+# member online
+@client.command()
+async def mon(ctx):
+    for user in ctx.guild.members:
+        if user.status != online:
+            await ctx.send(user)
+
 # random num bot
 @client.command()
 async def rnb(ctx, args, rangei):
