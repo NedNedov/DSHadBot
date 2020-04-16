@@ -82,9 +82,12 @@ async def cr(ctx):
 # member online
 @client.command()
 async def mon(ctx):
+    members = []
     for user in ctx.guild.members:
         if user.status != discord.Status.offline:
-            await ctx.send(user)
+            members.append(user)
+            mems = len(members)
+            await ctx.send(mems)
 
 # random num bot
 @client.command()
