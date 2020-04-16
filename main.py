@@ -81,16 +81,9 @@ async def cr(ctx):
     await ctx.send(dictionary.creator_info)
 
 # member online
-@client.command()
+@client.command(pass_context=True)
 async def mon(ctx):
-    members = []
-    for user in ctx.guild.members:
-        if user.status != discord.Status.offline:
-            members.append(user)
-            await ctx.send("Смотрю....")
-            mems = len(members)
-    time.sleep(5.5)
-            await ctx.send("Онлайн на сервере:" + mems)
+    await client.say("`{0.name} has this amount of members: {0.member_count}`".format(ctx.message.server))
 
 # random num bot
 @client.command()
