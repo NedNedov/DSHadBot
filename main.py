@@ -94,6 +94,11 @@ async def rnb(ctx, args, rangei):
     else:
         await ctx.send('Я думал: ' + str(bot_c) + '\nЯ не угадал...')
 
+#Who am i meinfo
+@client.command()
+async def meinfo(ctx):
+    await ctx.send('Ты ' + random.choice(dictionary.bad_words))
+
 # RUN
 token = os.environ.get('BOT_TOKEN')
 client.run(str(token))
